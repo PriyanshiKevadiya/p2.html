@@ -1,0 +1,208 @@
+<html>
+<head>
+  <title>javascript program</title>
+<body>
+
+    <input type="text" placeholder="Enter 1st number" id="arr1">
+    <button type="button" onclick="arrFunction()">1 appears</button>
+    <p id="array1"></p>
+
+    <p id="array2"></p>
+
+ 
+    <button type="button" onclick="arr1Function()">larger value</button>
+    <p id="array3"></p>
+    <p id="array4"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="arrelement2">
+    <button type="button" onclick="arr2Function()">1 appears</button>
+    <p id="array5"></p>
+
+    <!-- <input type="number" placeholder="Enter 1st number" id="arrelement3"> -->
+    <button type="button" onclick="arr3Function()">1 appears</button>
+    <p id="array6"></p>
+
+    <button type="button" onclick="arr4Function()">1 appears</button>
+    <p id="array7"></p>
+
+    <!-- 30 and 40 twice -->
+    <p id="array8"></p>
+
+    <input type="number"  id="swaparray" placeholder="enrer a number">
+    <button onclick="arr5Function()">swapa</button>
+    <p id="demo"></p>
+
+
+    <script>
+
+        // 71)------------------------
+
+        function arrFunction()
+        {
+            let a = document.getElementById("arr1").value;
+            let a2 = "";
+             
+            if(a.length >= 1)
+            {
+                let alen = a.length - 1;
+                if(a[0] == 1 || a[alen] == 1)
+                {
+                    a2 = "true";
+                }
+                else{
+                a2 = "false";
+                }
+            }
+            else{
+                a2 = "enter number";
+            }
+           
+            document.getElementById("array1").innerHTML = a2;
+        }
+
+        // 72)-----------------------
+        a = [40, 20 , 50];
+        let a3;
+
+        if( a[0] == a[2])
+        {
+            a3 = "true";
+        }
+        else{
+            a3 = "false";
+        }
+        document.getElementById("array2").innerHTML = a3;
+
+        // 73)-------------------
+        a = [20 , 30 ,50];
+        document.getElementById("array2").innerHTML = a.reverse();
+
+        // 74)---------------------
+        function arr1Function()
+        {
+            a = [80,10,30]
+            let aop = [];
+            if(a[0] >= a[2])
+            {
+               aop.push(a[0] = a[0]);
+               aop.push(a[1] = a[0]);
+               aop.push(a[2] = a[0]);
+             }
+             else if(a[2] >= a[0])
+             {
+                aop.push(a[0] = a[2]);
+                aop.push(a[1] = a[2]);
+                aop.push(a[2] = a[2]);
+             }
+             else{
+                aop = "false";
+             }
+             document.getElementById("array3").innerHTML = aop;
+        }
+
+        // 75)-----------------
+        fisrt = [20, 40, 90];
+        second = [30 , 10 , 50];
+        let third;
+
+        let t1 = fisrt.slice(1 , fisrt.length-1);
+        let t2 = second.slice(1 , second.length-1);
+        third = t1 + t2;
+
+
+        document.getElementById("array4").innerHTML = third;
+
+        // 76)------------------
+        function arr2Function()
+        {
+            let a = document.getElementById("arrelement2").value;
+            let a2 = [];
+             
+            if(a.length >= 1)
+            {
+                let alen = a.length - 1;
+                a2.push(a[0], a[alen]);
+            }
+            else{
+                a2 = "enter number";
+            }
+           
+            document.getElementById("array5").innerHTML = a2;
+        }
+
+        // 77)--------------------
+        function arr3Function()
+        {
+            a = [12, 1 , 36];
+            let a2;
+         
+            if(a.indexOf(1)  == 1 || a.indexOf(3) == 1)
+            {
+
+                a2 = "true";
+            }
+            else{
+                a2 = "false";
+            }
+            document.getElementById("array6").innerHTML = a2;
+        }
+
+        // 78)--------------------
+        function arr4Function()
+        {
+            a = [25, 1 ,36];
+            let a3;
+         
+            if(a.indexOf(1)  != 1 && a.indexOf(3) != 1)
+            {
+
+                a3 = "true";
+            }
+            else{
+                a3 = "false";
+            }
+            document.getElementById("array7").innerHTML = a3;
+        }
+
+        // 79)-----------------
+        let arr = [40, 40];
+        let acheck = arr[0] , bcheck = arr[1];
+        let ccheck = "";
+        
+            if( acheck === 30 && bcheck === 30 || acheck === 40 && bcheck === 40)
+            {
+                ccheck = "true";
+            }
+            else{
+                ccheck = "false"
+            }
+       
+        document.getElementById("array8").innerHTML = ccheck;
+        
+
+        // 80)----------------
+        function arr5Function()
+        {
+            let a = document.getElementById("swaparray").value;
+            let b;
+
+            if(a.length >=1 )
+            {
+                let swapa = [a[0] , a[a.length - 1]];
+                let swapb = [a[a.length - 1] , a[0]];
+                b = swapa += swapb;
+
+            }
+            else{
+                b = "false";
+            }
+            document.getElementById("demo").innerHTML = b;
+        }
+
+
+
+
+    </script>
+</body>
+</head>
+</html>

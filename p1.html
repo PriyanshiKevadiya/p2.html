@@ -1,0 +1,152 @@
+<html>
+
+<head>
+    <title>javascript program</title>
+
+<body>
+    <p id="demo"></p>
+
+    <!-- 2) -->
+    <button onclick="window.print()">print the window</button>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <!-- <p id="demo2"></p>
+             <canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas> -->
+
+    <p id="demo3"></p>
+    <input type="text" id="demo5">
+    <button onclick="myFunction()">Leap year</button><br>
+    <p id="demo4"></p>
+
+    <!-- 7)-------------- -->
+    <p id="demo55"></p>
+
+    <input type="number" placeholder="Enter Number" id="number">
+    <button onclick="numFunction()">1 to 10 number</button>
+    <p id="demo6"></p>
+
+        <!-- 9)------------ -->
+        <p id="demo66"></p>
+
+    1st Number:= <input type="text" id="1num" placeholder="enter 1 number"><br><br>
+    2st Number:= <input type="text" id="2num" placeholder="enter 1 number"><br><br>
+    <button onclick="oneFunction()">Multiply</button>
+    <button onclick="twoFunction()">Divide</button>
+    <p id="demo7"></p>
+
+
+
+    <script>
+
+        //  1)    ---------------------------------
+        let day = ["sunday", "monday", "tusday", "wednesday", "thursday", "friday", "saturday"];
+        const d = new Date();
+        let d1 = day[d.getDay()];
+        document.getElementById("demo").innerHTML = "today is = " + d1 + "<br>" + " time is :=" + +
+            d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+
+        // 3) ------------------get the current date
+
+        let d2 = new Date();
+        document.getElementById("demo1").innerHTML = d2.toLocaleDateString() + " , " + d2.getMonth() + "-" + d2.getDate() + "-"
+            + d2.getFullYear();
+
+        // 4) ------------------area of a triangle 
+
+        let x = 5;
+        let y = 6;
+        let z = 7;
+        let s = (x + y + z) / 2;
+        let area1 = (s - x) * (s - y) * (s - z);
+        let area2 = s * area1;
+        document.getElementById("demo2").innerHTML = Math.sqrt(area2);
+
+
+
+
+        // 5) ortet --------------------
+
+        setInterval(text, 500)
+
+        let text1 = "W3resource";
+        let text2 = text1.split("");
+        function text() {
+            let text3 = text2.unshift(text2.pop());
+            let text4 = text2.join("");
+            document.getElementById("demo3").innerHTML = text4;
+        }
+
+
+        // 6) --------------------leap year
+
+        function myFunction() {
+            let year = document.getElementById("demo5").value;
+            let leap = "";
+            if (year % 4 == 0) {
+                leap = "This is leap year";
+            } else {
+                leap = "This is not a leap Year";
+            }
+            document.getElementById("demo4").innerHTML = leap;
+        }
+
+        // 7)------------------- 
+        let yearout = "";
+        for (let year = 2014; year <= 2050; year++) {
+            let d = new Date(year, 0, 1);
+            if (d.getDay() === 0) {
+                yearout += year + "<br>";
+                document.getElementById("demo55").innerHTML = "1st January is being a Sunday  " + yearout;
+            }
+        }
+
+        // 8) ------------  1 to 10 number
+        function numFunction() {
+            let num = document.getElementById("number").value;
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let random1 = "";
+            if (num == num1) {
+                random1 = "Good Work" + "<br>" + "Random Num is = " + num1 + "<br>" + "Input Num is" + num;
+            }
+            else {
+                random1 = "Not matched" + "<br>" + "Random Num is = " + num1 + "<br>" + "Input Num is" + num;
+            }
+            document.getElementById("demo6").innerHTML = random1;
+        }
+
+        // 9)-------------------- 
+        var one_day = 1000 * 60 * 60 * 24;
+        today = new Date();
+        var cris = new Date(today.getFullYear(), 11, 25);
+        if (today.getMonth() == 11 && today.getDate() > 25) {
+            cris.setFullYear(cris.getFullYear() + 1);
+        }
+        
+        document.getElementById("demo66").innerHTML = Math.ceil((cris.getTime() - today.getTime()) / (one_day)) +
+            " days left until Christmas!";
+
+        // 10) ---------------------calculate multiplication and division of two numbers
+        function oneFunction() {
+            let cal = document.getElementById("1num").value;
+            let cal1 = document.getElementById("2num").value;
+            let mul = cal * cal1
+            document.getElementById("demo7").innerHTML = mul;
+        }
+        function twoFunction() {
+            let cal = document.getElementById("1num").value;
+            let cal1 = document.getElementById("2num").value;
+            let mul = cal / cal1
+            document.getElementById("demo7").innerHTML = mul;
+        }
+
+
+
+
+
+    </script>
+</body>
+</head>
+
+</html>

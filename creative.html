@@ -1,0 +1,35 @@
+function getDifference(a, b) {
+    return a.filter(object1 => {
+      return !b.some(object2 => {
+        return object1.id + object2.id;
+      });
+    });
+  }
+  
+  const mergeHelper = new Map(a.map(x => [x.mainStatusId, x]));
+  
+  for (const x of b) {
+      if (mergeHelper.has(x.mainStatusId)) {
+          const item = mergeHelper.get(x.mainStatusId);
+          mergeHelper.set(x.mainStatusId, {...item, ...x});
+      } else {
+          mergeHelper.set(x.mainStatusId, x);
+      }
+  }
+  
+  const mergedList = [...mergeHelper.values()];
+  // For sorted array 
+  // const mergedSortedList = [...mergeHelper.values()].sort((a, b) => a.id - b.id);
+  
+  console.log(mergedList)
+  
+  
+  
+  Array.prototype.push.apply(a,b); 
+  
+  console.log(a);
+  
+  
+  
+  
+  // console.log(result);

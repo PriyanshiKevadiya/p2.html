@@ -1,0 +1,95 @@
+<html>
+
+<head>
+
+    <title>javascript program</title>
+
+<body>
+    <script>
+
+
+
+        let a = [
+            {
+                "taskCount": 3.0,
+                "mainStatusId": "5feb4252aa810a3849fa551c"
+            },
+            {
+                "taskCount": 6.0,
+                "mainStatusId": "615f1fbc34bb78755ff35766"
+            },
+            {
+                "taskCount": 44.0,
+                "mainStatusId": "5feb3f94aa810a3849fa5515"
+            },
+            {
+                "taskCount": 92.0,
+                "mainStatusId": "5feb4221aa810a3849fa551b"
+            },
+            {
+                "taskCount": 3.0,
+                "mainStatusId": "5feb41e6aa810a3849fa551a"
+            }
+        ];
+        let b = [
+            {
+                "leadCount": 4.0,
+                "mainStatusId": "61ea5943c53bc8037490af45"
+            },
+            {
+                "leadCount": 25.0,
+                "mainStatusId": "5feb3f94aa810a3849fa5515"
+            },
+            {
+                "leadCount": 1.0,
+                "mainStatusId": "5fc7e2777b3b341134e771b6"
+            },
+            {
+                "leadCount": 7.0,
+                "mainStatusId": "5ff82e5cd5b12b1502f6c5ae"
+            },
+            {
+                "leadCount": 5.0,
+                "mainStatusId": "5ff82e5cd5b12b1502f6c5af"
+            },
+            {
+                "leadCount": 13.0,
+                "mainStatusId": "5fb36eace0f10a12bab6dcf4"
+            },
+            {
+                "leadCount": 1.0,
+                "mainStatusId": "5fc7e2067b3b341134e771b3"
+            }
+        ];
+
+
+
+
+        // for merge id
+        // itable
+        const merge = new Map(a.map(x => [x.mainStatusId, x]));
+        // console.log("rgiyggtyhjf",merge);
+        for (const x of b) {
+            if (merge.has(x.mainStatusId)) {
+                const getid = merge.get(x.mainStatusId);
+                const setid = merge.set(x.mainStatusId, { ...getid, ...x });
+
+            }
+            else {
+                merge.set(x.mainStatusId, x);
+
+            }
+        }
+        const mergeconcet = [...merge.values()];
+        console.log(mergeconcet);
+
+
+
+
+
+
+    </script>
+</body>
+</head>
+
+</html>

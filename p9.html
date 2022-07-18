@@ -1,0 +1,225 @@
+<html>
+
+<head>
+
+    <title>javascript program</title>
+
+<body>
+    first number =<input type="text" placeholder="Enter 1st number" id="num">
+    two number =<input type="text" placeholder="Enter 1st number" id="num1">
+    <button type="button" onclick="numFunction()">concat a string</button>
+    <p id="demo"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="num2">
+    <button type="button" onclick="num1Function()">concat a string</button>
+    <p id="demo1"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="num3">
+    <button type="button" onclick="num2Function()">concat a string</button>
+    <p id="demo2"></p>
+
+    first number =<input type="text" placeholder="Enter 1st number" id="num4">
+    two number =<input type="text" placeholder="Enter 1st number" id="num5">
+    <button type="button" onclick="num3Function()">concat a string</button>
+    <p id="demo3"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="num6">
+    <button type="button" onclick="num4Function()">concat a string</button>
+    <p id="demo4"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="num7">
+    <button type="button" onclick="num5Function()">concat a string</button>
+    <p id="demo5"></p>
+
+    <input type="text" placeholder="Enter 1st number" id="num8">
+    <button type="button" onclick="num6Function()">concat a string</button>
+    <p id="demo6"></p>
+
+    <input type="text" placeholder="Enter String" id="num10">
+    <input type="number" placeholder="Enter 1st number" id="num9">
+    <button type="button" onclick="num7Function()">concat a string</button>
+    <p id="demo7"></p>
+
+   
+    <button type="button" onclick="arrFunction()">sum of array</button>
+    <p id="array1"></p>
+
+    <p id="array2"></p>
+    
+      <!-- first number =<input type="text" placeholder="Enter 1st number" id="arr3">
+    <button type="button" onclick="arr1Function()">concat a string</button>
+    <p id="array2"></p> -->
+
+
+    <script>
+        // 61)-----------------
+
+        function numFunction() {
+            let n = document.getElementById("num").value;
+            let n1 = document.getElementById("num1").value;
+            let str = "";
+
+            if (isNaN(n) || isNaN(n1)) {
+                let x = n.slice(1, n.length);
+                let y = n1.slice(1);
+                str = x + y;
+            }
+            else {
+                str = "Enter a String";
+            }
+            document.getElementById("demo").innerHTML = str;
+        }
+
+        // 62)----------------
+        function num1Function() {
+            let n2 = document.getElementById("num2").value;
+            let text = "";
+
+            if (n2.length >= 3) {
+
+                text = n2.slice(n2.length - 3, n2.length);
+                let ty = n2.slice(0, n2.length - 3);
+                text = text + ty;
+            }
+            else {
+                text = "false";
+            }
+
+            document.getElementById("demo1").innerHTML = text;
+
+        }
+
+        // 63)----------------middle three characters 
+
+        function num2Function() {
+            let n3 = document.getElementById("num3").value;
+            let text = "";
+            if (n3.length % 2 != 0 && n3.length >= 3) {
+                let middelstr = n3.length / 2;
+                text = n3.slice(n3.length - (middelstr + 1), n3.length - (middelstr - 2))
+            }
+            else {
+                text = "Enter a String"
+            }
+            document.getElementById("demo2").innerHTML = text;
+        }
+
+        // 64)----------------middle three characters 
+
+        function num3Function() {
+            let n4 = document.getElementById("num4").value;
+            let n5 = document.getElementById("num5").value;
+            let concatstr = "";
+            if (n4.length > n5.length) {
+                n4 = n4.split("");
+                let compare = n4.splice(n5.length);
+                let strjoin = n4.join("");
+                concatstr = strjoin + n5;
+            }
+            else if (n4.length < n5.length) {
+                n5 = n5.split("");
+                let compare1 = n5.splice(n4.length);
+                let str1join = n5.join("");
+                concatstr = n4 + str1join;
+            }
+            else {
+                concatstr = n4 + n5;
+            }
+            document.getElementById("demo3").innerHTML = concatstr;
+        }
+
+        // 65)----------------middle three cha
+        function num4Function() {
+            let n5 = document.getElementById("num6").value;
+            let end = "";
+
+            if (n5.length >= 6) {
+                end = n5.endsWith("Script");
+            }
+            else {
+                end = "fasle";
+            }
+            document.getElementById("demo4").innerHTML = end;
+        }
+
+        //   66)-----------------
+        function num5Function() {
+            let n6 = document.getElementById("num7").value;
+            let begin = "";
+
+            if (n6.startsWith("Los") || n6.startsWith("New")) {
+                begin = n6;
+            }
+            else {
+                begin;
+            }
+            document.getElementById("demo5").innerHTML = begin;
+        }
+
+        //   67)-----------------
+        function num6Function() {
+            let n7 = document.getElementById("num8").value;
+            let char = "";
+
+            if (n7.startsWith("P") || n7.endsWith("P")) {
+                n7 = n7.split("");
+                n7.pop();
+                n7.shift();
+                char = n7.join("");
+            } else {
+                char = n7;
+            }
+            document.getElementById("demo6").innerHTML = char;
+        }
+
+        //68)-----------------
+           function num7Function() {
+            let n8 = document.getElementById("num10").value;
+            let n7 = parseInt(document.getElementById("num9").value);
+            let char = "";
+
+            if(n8.length >= n7)
+            {
+                n8 = n8.split("");
+                let str1  = n8.splice(0 ,  n7);
+                let str2 = n8.splice(n8.length - n7, n7);
+                let str1join = str1.join("");
+                let str2join = str2.join("");
+                char = str1join + str2join;
+            }
+            else{
+                char = "false";
+            }
+            document.getElementById("demo7").innerHTML = char;
+
+           }
+
+
+        // 69)--------------------array start
+          a = [22, 22 ,22];
+          function arrFunction(total,value)
+          {
+            return total + value;
+          }
+          document.getElementById("array1").innerHTML = a.reduce(arrFunction);
+
+
+        // 70)--------------------array start
+
+          a = [5 , 6 , 7];
+          
+            let shift = a[0];
+            a[0] = a[1];
+            a[1] = a[2];
+            a[2] = shift;
+        
+        document.getElementById("array2").innerHTML = a;
+
+
+
+
+    </script>
+</body>
+</head>
+
+</html>
